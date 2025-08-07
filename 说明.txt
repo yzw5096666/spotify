@@ -1,3 +1,16 @@
+ios证书或者巨魔
+直接使用MYSpotify.dylib成品
+注入签名使用，需要开启文件访问，自备socks5代理 
+打开手机文件app软件目录下proxy.conf（误删除会自动恢复默认第一行no）
+第一行yes/no决定是否启用socks5代理
+第二行域名/ip，第三行端口
+四五行依次是socks5的认证用户密码（可选）
+修改后重启app生效
+（我不会做到app内部，故出此下策，可以使用es文件浏览器快速修改，第一行no就不走代理，第一行yes就开启，剩下需要配置正确）
+（shadowrocket等分流添加socks的ip/域名为直连，目前测试socks5海外直连spotify正常）
+（也可以考虑专线转发海外socks，或者国内服务器中转，任意协议入，任意协议出）
+
+如何自己开发MYSpotify.dylib
 首先mac安装Xcode
 然后把tcp.m放到mac桌面
 然后复制命令
@@ -8,11 +21,5 @@ xcrun -sdk iphoneos clang -arch arm64 -fobjc-arc -framework Foundation \
   -isysroot "$(xcrun --sdk iphoneos --show-sdk-path)" \
   -shared -o ~/Desktop/tcp.dylib \
   ~/Desktop/tcp.m
+这个tcp.dylib就是成品，可以随便重命名
 
-
-注入签名使用，需要开启文件访问
-打开文件app软件目录下proxy.conf
-第一行yes/no决定是否启用代理
-第二行域名/ip，第三行端口
-四五行分别是socks认证用户密码（可选）
-重启app生效
