@@ -6,7 +6,9 @@ ios证书或者巨魔
 第二行域名/ip，第三行端口
 四五行依次是socks5的认证用户密码（可选）
 修改后重启app生效
-（这样app可以实现真正单app分流，不显示vpn不影响其他app，而且相当于一直代理，没有异地限制了，不过整个仅仅hook了nsurlsession，如果注入youtube，只有封面和评论能加载，chatgpt解释，googlevideo基于quic协议，苹果的udp更底层，hook起来十分复杂，也可能闪退，最好就是系统级vpn，所以整个插件只能用于spotify，telegram这种简单的tcp。不过tg已经内置了，有socks直接填就行）
+（这样app可以实现真正单app分流，不显示vpn不影响其他app，而且相当于一直代理，没有异地限制了，不过整个仅仅hook了nsurlsession）
+（如果注入youtube，只有封面和评论能加载，chatgpt解释，googlevideo基于quic协议，苹果的udp更底层，hook起来十分复杂，也可能闪退）
+（最好就是系统级vpn，所以整个插件只能用于spotify，telegram这种简单的tcp。不过tg已经内置了，有socks直接填就行）
 （我不会做到app内部，故出此下策，可以使用es文件浏览器快速修改，可以windows的v2局域网共享测试）
 （shadowrocket等分流添加socks的ip/域名为直连，目前测试socks5海外直连spotify正常）
 （也可以考虑专线转发海外socks，或者国内服务器中转，任意协议入，任意协议出）
